@@ -46,7 +46,7 @@ const InputSearch = props => {
             />
             <datalist id='search'>
                 {localStor && localStor.map((item, index) => {
-                    if (index <= 5) {
+                    if (index < 5) {
                         return <option key = { item } value={ item }/>
                     }
                 })}

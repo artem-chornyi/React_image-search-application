@@ -30,13 +30,13 @@ const ImgList = () => {
             ]))
         } else {
             const check = JSON.parse(localStor).find(item => item === value);
-
-            if ( !check ) {
+                
+            
                 localStorage.setItem('valueSearch', JSON.stringify([
                     value,
-                    ...JSON.parse(localStor)
+                    ...JSON.parse(localStor).filter(item => item !== value )
                 ]))
-            }
+            
         }
 
         getImageSearch(value)
@@ -62,7 +62,7 @@ const ImgList = () => {
 
     const handlerOnClick = () => {
         const nextPage = page + 1;
-    
+
         getAddImage(valueSearch, nextPage)
         .then(result => {
             setPage(nextPage);

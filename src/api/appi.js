@@ -11,6 +11,6 @@ export function getAddImage(url, page) {
 }
 
 export function getUserCollections(url) {
-    return fetch( `https://api.unsplash.com/users/${url}/photos?per_page=50&client_id=` + process.env.REACT_APP_KEY )
+    return fetch( `https://api.unsplash.com/users/${url}/photos?per_page=50&orientation=portrait&client_id=` + process.env.REACT_APP_KEY )
     .then(response => response.json());
 }
